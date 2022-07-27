@@ -7,8 +7,7 @@
 <%# tasks_path is back to the main directory, based on prefixes %>
 <%= link_to 'back to Task list', tasks_path %>
 
-
-<%= link_to 'Delete',
+<%= link_to ("<i class='fa-solid fa-trash-can' ></i>").html_safe,
  task_path(@task),
  data: {turbo_method: :delete, turbo_confirm: "are you sure?"}
  %>

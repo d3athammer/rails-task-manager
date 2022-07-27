@@ -1,9 +1,18 @@
+
+<div class="container">
 <h1>My Task</h1>
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= link_to task.title, task_path(task) %></li>
+    <li><%= link_to task.title, task_path(task) %>
+    <%= link_to ("<i class='fa-solid fa-trash-can thrash-icon' ></i>").html_safe,
+ task_path(task),
+ data: {turbo_method: :delete, turbo_confirm: "are you sure?"}
+ %>
+    </li>
   <% end %>
+  <div class="new-task mb-3">
   <i class="fa-solid fa-plus"></i>
   <%= link_to 'Create new task', tasks_new_path %>
-
+  </div>
 </ul>
+</div>
